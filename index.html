@@ -22,3 +22,477 @@
   <p>Your journey to breathe easy starts here.</p>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>INHALE — Breathe Easy</title>
+
+<meta name="description" content="Discover INHALE, your aromatic companion for moments of freshness and mindful breathing.">
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --green: #183c2c;
+  --light-green: #dce8d8;
+  --cream: #f7f5ec;
+  --yellow: #f1d66b;
+  --text: #23372c;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 8%;
+  background: var(--cream);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: var(--green);
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--green);
+  margin-left: 25px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.hero {
+  min-height: 85vh;
+  padding: 70px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  background:
+    radial-gradient(circle at 80% 45%, #e3ebd9 0%, transparent 45%),
+    var(--cream);
+}
+
+.hero-content {
+  max-width: 550px;
+  animation: fadeUp 1s ease both;
+}
+
+.tagline {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #66816a;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 1.05;
+  color: var(--green);
+  margin-bottom: 25px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 450px;
+  color: #526457;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 16px 30px;
+  background: var(--green);
+  color: white;
+  text-decoration: none;
+  border-radius: 40px;
+  font-weight: bold;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.button:hover {
+  transform: translateY(-4px);
+  background: #2c6045;
+}
+
+.product-scene {
+  position: relative;
+  width: 350px;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: #d6e4c9;
+  border-radius: 50%;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.bottle {
+  position: relative;
+  width: 125px;
+  height: 270px;
+  border-radius: 35px 35px 25px 25px;
+  background: linear-gradient(90deg, #16442c, #287449, #16442c);
+  box-shadow: 20px 30px 50px #183c2c35;
+  animation: float 4s ease-in-out infinite;
+  z-index: 2;
+}
+
+.bottle-cap {
+  position: absolute;
+  width: 75px;
+  height: 65px;
+  background: linear-gradient(90deg, #202d24, #455449, #202d24);
+  border-radius: 15px 15px 8px 8px;
+  top: -50px;
+  left: 25px;
+}
+
+.bottle-label {
+  position: absolute;
+  top: 75px;
+  left: 8px;
+  width: 109px;
+  height: 125px;
+  background: var(--yellow);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--green);
+}
+
+.bottle-label strong {
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.bottle-label span {
+  font-size: 10px;
+  margin-top: 8px;
+}
+
+.leaf {
+  position: absolute;
+  font-size: 40px;
+  animation: leafFloat 5s ease-in-out infinite;
+}
+
+.leaf-one {
+  top: 45px;
+  left: 15px;
+}
+
+.leaf-two {
+  bottom: 65px;
+  right: 10px;
+  animation-delay: 1s;
+}
+
+.leaf-three {
+  top: 100px;
+  right: 15px;
+  animation-delay: 2s;
+}
+
+section {
+  padding: 90px 8%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(32px, 4vw, 48px);
+  color: var(--green);
+  margin-bottom: 18px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #718071;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 50px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.feature-card {
+  padding: 35px;
+  background: white;
+  border-radius: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px #183c2c12;
+}
+
+.feature-icon {
+  font-size: 38px;
+  margin-bottom: 22px;
+}
+
+.feature-card h3 {
+  color: var(--green);
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  color: #68786a;
+  line-height: 1.8;
+}
+
+.about {
+  background: var(--green);
+  color: white;
+  text-align: center;
+}
+
+.about h2 {
+  color: white;
+}
+
+.about p {
+  max-width: 700px;
+  margin: 25px auto 0;
+  line-height: 1.9;
+  color: #d9e5d9;
+}
+
+footer {
+  padding: 35px 8%;
+  text-align: center;
+  background: #10291e;
+  color: #c7d6c8;
+  font-size: 13px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 1;
+  }
+}
+
+@keyframes leafFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-10deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(10deg);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px 6%;
+  }
+
+  nav a {
+    margin-left: 12px;
+    font-size: 12px;
+  }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 6%;
+  }
+
+  .hero-content p {
+    margin: auto;
+  }
+
+  .product-scene {
+    transform: scale(0.85);
+    margin-top: -10px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    padding: 65px 6%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">INHALE</div>
+
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero">
+
+  <div class="hero-content">
+    <div class="tagline">Your everyday breathing companion</div>
+
+    <h1>Breathe Easy.<br>Feel Fresh.</h1>
+
+    <p>
+      Welcome to INHALE. Discover your moment of freshness
+      with our botanical-inspired aromatic inhaler.
+      A little pause, a fresh feeling, and a moment for you.
+    </p>
+
+    <a href="#features" class="button">Discover INHALE</a>
+  </div>
+
+  <div class="product-scene">
+
+    <div class="glow"></div>
+
+    <div class="leaf leaf-one">🌿</div>
+    <div class="leaf leaf-two">🍃</div>
+    <div class="leaf leaf-three">🌱</div>
+
+    <div class="bottle">
+      <div class="bottle-cap"></div>
+
+      <div class="bottle-label">
+        <strong>INHALE</strong>
+        <span>BREATHE EASY</span>
+        <span>HERBAL INHALER</span>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="features">
+
+  <h2 class="section-title">A Fresh Moment, Anytime</h2>
+
+  <p class="section-subtitle">
+    Make a little space for freshness and mindful moments
+    throughout your day.
+  </p>
+
+  <div class="features">
+
+    <div class="feature-card">
+      <div class="feature-icon">🌿</div>
+      <h3>Botanical Inspired</h3>
+      <p>
+        Inspired by aromatic botanicals including mint,
+        eucalyptus, tulsi, clove and ginger.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🍃</div>
+      <h3>Fresh Feeling</h3>
+      <p>
+        Enjoy a refreshing aromatic experience
+        whenever you need a little pause.
+      </p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🧘</div>
+      <h3>Mindful Moments</h3>
+      <p>
+        Take a moment for yourself and make
+        everyday freshness part of your routine.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="about" class="about">
+
+  <h2 class="section-title">Welcome to INHALE</h2>
+
+  <p>
+    Your journey to breathe easy starts here.
+    INHALE brings together botanical inspiration,
+    thoughtful design and everyday freshness.
+    Discover a simple way to make space for yourself
+    in the middle of a busy day.
+  </p>
+
+</section>
+
+</main>
+
+<footer>
+  © 2026 INHALE. Breathe Easy.
+</footer>
+
+</body>
+</html>
