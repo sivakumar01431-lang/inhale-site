@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,93 +115,32 @@ h1 {
   background: #2c6045;
 }
 
+/* INHALE PRODUCT IMAGE */
+
 .product-scene {
   position: relative;
   width: 350px;
-  height: 420px;
+  min-width: 300px;
+  min-height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.glow {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: #d6e4c9;
-  border-radius: 50%;
-  animation: pulse 4s ease-in-out infinite;
-}
-
-.bottle {
+.product-image {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  object-fit: contain;
   position: relative;
-  width: 125px;
-  height: 270px;
-  border-radius: 35px 35px 25px 25px;
-  background: linear-gradient(90deg, #16442c, #287449, #16442c);
-  box-shadow: 20px 30px 50px #183c2c35;
-  animation: float 4s ease-in-out infinite;
   z-index: 2;
+  border-radius: 12px;
+  box-shadow: 0 25px 50px #183c2c20;
+  animation: float 4s ease-in-out infinite;
 }
 
-.bottle-cap {
-  position: absolute;
-  width: 75px;
-  height: 65px;
-  background: linear-gradient(90deg, #202d24, #455449, #202d24);
-  border-radius: 15px 15px 8px 8px;
-  top: -50px;
-  left: 25px;
-}
-
-.bottle-label {
-  position: absolute;
-  top: 75px;
-  left: 8px;
-  width: 109px;
-  height: 125px;
-  background: var(--yellow);
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: var(--green);
-}
-
-.bottle-label strong {
-  font-size: 22px;
-  letter-spacing: 2px;
-}
-
-.bottle-label span {
-  font-size: 10px;
-  margin-top: 8px;
-}
-
-.leaf {
-  position: absolute;
-  font-size: 40px;
-  animation: leafFloat 5s ease-in-out infinite;
-}
-
-.leaf-one {
-  top: 45px;
-  left: 15px;
-}
-
-.leaf-two {
-  bottom: 65px;
-  right: 10px;
-  animation-delay: 1s;
-}
-
-.leaf-three {
-  top: 100px;
-  right: 15px;
-  animation-delay: 2s;
-}
+/* FEATURES */
 
 section {
   padding: 90px 8%;
@@ -255,6 +195,8 @@ section {
   line-height: 1.8;
 }
 
+/* ABOUT */
+
 .about {
   background: var(--green);
   color: white;
@@ -272,6 +214,8 @@ section {
   color: #d9e5d9;
 }
 
+/* FOOTER */
+
 footer {
   padding: 35px 8%;
   text-align: center;
@@ -280,32 +224,15 @@ footer {
   font-size: 13px;
 }
 
+/* ANIMATIONS */
+
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-18px);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.7;
-  }
-  50% {
-    transform: scale(1.08);
-    opacity: 1;
-  }
-}
-
-@keyframes leafFloat {
-  0%, 100% {
-    transform: translateY(0) rotate(-10deg);
-  }
-  50% {
-    transform: translateY(-15px) rotate(10deg);
   }
 }
 
@@ -314,11 +241,14 @@ footer {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+/* MOBILE RESPONSIVE */
 
 @media (max-width: 768px) {
   header {
@@ -341,8 +271,16 @@ footer {
   }
 
   .product-scene {
-    transform: scale(0.85);
-    margin-top: -10px;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    max-width: 350px;
+    margin-top: 10px;
+  }
+
+  .product-image {
+    width: 100%;
+    max-width: 350px;
   }
 
   .features {
@@ -351,6 +289,16 @@ footer {
 
   section {
     padding: 65px 6%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
   }
 }
 </style>
@@ -377,7 +325,7 @@ footer {
     <h1>Breathe Easy.<br>Feel Fresh.</h1>
 
     <p>
-     Discover your moment of freshness
+      Discover your moment of freshness
       with our botanical-inspired aromatic inhaler.
       A little pause, a fresh feeling, and a moment for you.
     </p>
@@ -387,25 +335,11 @@ footer {
 
   <div class="product-scene">
 
-  <img
-    src="1DC08F55-C3FC-4D06-AF99-A60101268D71.png"
-    alt="INHALE Herbal Inhaler"
-    class="product-image"
-  >
-
-</div>
-.product-image {
-  width: 100%;
-  max-width: 350px;
-  height: auto;
-  object-fit: contain;
-  position: relative;
-  z-index: 2;
-  border-radius: 12px;
-  animation: float 4s ease-in-out infinite;
-}
-      </div>
-    </div>
+    <img
+      src="1DC08F55-C3FC-4D06-AF99-A60101268D71.png"
+      alt="INHALE Herbal Inhaler with its green bottle and yellow label"
+      class="product-image"
+    >
 
   </div>
 
